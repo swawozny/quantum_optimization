@@ -18,11 +18,7 @@ def ten_one_one(a, b, c, d, e, f, g, h, i, j):
 def all_equal(a, b, c):
     return a == b and b == c
 
-def first_one_second_zero(a,b):
-    if a == 1:
-        return b == 0
-    else:
-        return True
+
 
 
 def first_one_rest_zero_three(first, arg1, arg2, arg3):
@@ -69,10 +65,7 @@ for i, qubit_list in enumerate(one_job_one_machine_cubits):
     small = 3
     big = 6
     if len(qubit_list) == big:
-        # print("Adding {}, {}".format(i, qubit_list))
-        # for qubit in qubit_list:
-        #     csp.add_constraint(first_one_second_zero, ['x{}'.format(i), 'x{}'.format(qubit)])
-            # print("in fact first_one_second_zero {} {}".format(i, qubit))
+        print("Adding {}, {}".format(i, qubit_list))
         csp.add_constraint(first_one_rest_zero_six,
                            ['x{}'.format(i), 'x{}'.format(qubit_list[0]), 'x{}'.format(qubit_list[1]),
                             'x{}'.format(qubit_list[2]), 'x{}'.format(qubit_list[3]),
@@ -82,9 +75,6 @@ for i, qubit_list in enumerate(one_job_one_machine_cubits):
         csp.add_constraint(first_one_rest_zero_three,
                            ['x{}'.format(i), 'x{}'.format(qubit_list[0]), 'x{}'.format(qubit_list[1])
                                , 'x{}'.format(qubit_list[2])])
-        # for qubit in qubit_list:
-        #     csp.add_constraint(first_one_second_zero, ['x{}'.format(i), 'x{}'.format(qubit)])
-            # print("in fact first_one_second_zero {} {}".format(i, qubit))
     if (len(qubit_list) != small and len(qubit_list) != big):
         raise Exception
 
@@ -92,7 +82,7 @@ for i, qubit_list in enumerate(one_job_one_machine_cubits):
 # adding order constraint
 
 
-bqm = dwavebinarycsp.stitch(csp, max_graph_size=16, min_classical_gap=0.5)
+bqm = dwavebinarycsp.stitch(csp, max_graph_size=16, min_classical_gap=0.6)
 
 Q, offset = bqm.to_qubo()
 # print(bqm.to_qubo())
@@ -100,4 +90,6 @@ Q, offset = bqm.to_qubo()
 response = EmbeddingComposite(DWaveSampler()).sample_qubo(Q, num_reads=100)
 for s in list(response.data()):
     print(s.sample, "Energy: ", s.energy, "Occurrences: ", s.num_occurrences)
+
+
 
