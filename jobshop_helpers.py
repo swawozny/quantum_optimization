@@ -48,9 +48,7 @@ def get_one_job_one_machine_csp(jobs, row_length, number_of_operations, number_o
     constraint_dict = csp_get_one_job_on_machine_constraint_dict(jobs, row_length, number_of_operations, number_of_qubits, time_limit)
     csp_list = []
     for i in range(number_of_qubits):
-        # print("i: {}, len: {}".format(i, len(constraint_dict['{}'.format(i)])), constraint_dict['{}'.format(i)])
         csp_list.append(constraint_dict['{}'.format(i)])
-    # print(csp_list)
     return csp_list
 
 def get_global_op_num(job_lens, job_number, checked_op_num):
@@ -70,50 +68,27 @@ def get_qubits_for_operation(job_number, checked_op_num, job_lens, number_of_mac
 
 
 def csp_get_order_constraint(jobs, number_of_machines, time_limit, number_of_operations):
-   job_lens = [len(job) for job in jobs]
-   row_len = number_of_machines * number_of_operations
-   # for every job
-   for (job_number, job) in enumerate(jobs):
+    job_lens = [len(job) for job in jobs]
+    row_len = number_of_machines * number_of_operations
+    # for every job
+    result = []
+    for (job_number, job) in enumerate(jobs):
       # for every operation except first in job
-      for checked_op_num in range(1,len(job)):
-         qubits_for_checked_op = get_qubits_for_operation(job_number, checked_op_num, job_lens,
+        for checked_op_num in range(1,len(job)):
+            qubits_for_checked_op = get_qubits_for_operation(job_number, checked_op_num, job_lens,
                                                           number_of_machines, time_limit, number_of_operations)
          # for every operation, that is before operation with number op_num
-         for (tmp_op_num, tmp_op_len) in enumerate(job[:checked_op_num]):
-            qubits_for_tmp_op = get_qubits_for_operation(job_number, tmp_op_num, job_lens,
+            for (tmp_op_num, tmp_op_len) in enumerate(job[:checked_op_num]):
+                qubits_for_tmp_op = get_qubits_for_operation(job_number, tmp_op_num, job_lens,
                                                           number_of_machines, time_limit, number_of_operations)
-         #    print("Job: {}, Checked op_num: {}, tmp op num: {}, tmp op len: {}".format(job, checked_op_num, tmp_op_num, tmp_op_len))
-            for qubit_checked_op in qubits_for_checked_op:
-                print(qubit_checked_op, qubits_for_tmp_op)
-                # for qubit_tmp_op in qubits_for_tmp_op:
-                #   checked_op_time_slot = get_time_slot(qubit_checked_op, row_len)
-                #   tmp_op_time_slot = get_time_slot(qubit_tmp_op, row_len)
-                  # if checked_op_time_slot - tmp_op_time_slot < tmp_op_len:
-                  #    connections[qubit_tmp_op, qubit_checked_op] += multiplier
+                for qubit_checked_op in qubits_for_checked_op:
+                    qubits_filtered = []
+                    for qubit_tmp_op in qubits_for_tmp_op:
+                        checked_op_time_slot = get_time_slot(qubit_checked_op, row_len)
+                        tmp_op_time_slot = get_time_slot(qubit_tmp_op, row_len)
+                        if checked_op_time_slot - tmp_op_time_slot < tmp_op_len:
+                            qubits_filtered.append(qubit_tmp_op)
+                            # connections[qubit_tmp_op, qubit_checked_op] += multiplier
+                    result.append((qubit_checked_op, qubits_filtered))
 
-
-# csp_get_order_constraint([[2,1],[1,2]], 2, 4, 4)
-# print(get_one_job_one_machine_csp([[2,1],[1,2]], 8, 4, 40, 5))
-
-
-
-
-
-
-# starts_once_constraints = \
-#     [['x{}'.format(global_operation_number + 8 * time ) for time in range(5)] \
-#      for global_operation_number in range(8)]
-# print(starts_once_constraints)
-
-# csp.add_constraint(one_one, ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
-# csp.add_constraint(n_one_one, ['a', 'b', 'c', 'd'])
-# csp.add_constraint(all_equal, ['a', 'b', 'c'])
-
-# print(csp.check({'a': 0, 'b': 1, 'c': 1, 'd': 0}))
-
-# print(csp.check({'a': 1, 'b': 0, 'c': 0, 'd': 0, 'e': 0, 'f': 0, 'g': 0, 'h': 0}))
-
-# resp = DWaveSampler().sample(bqm)
-#
-# for sample, energy in resp.data(['sample', 'energy']):
-#     print(sample, csp.check(sample), energy)
+    return result

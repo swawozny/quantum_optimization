@@ -4,7 +4,7 @@ from dwave.system.samplers import DWaveSampler
 from dwave.system.composites import EmbeddingComposite
 import numpy as np
 # Set Q for the problem QUBO
-from helpers import get_machine_and_time_slot, get_operation_length, is_last_row, get_qubits_from_slot_and_machine, \
+from jobshop_helpers import get_machine_and_time_slot, get_operation_length, is_last_row, get_qubits_from_slot_and_machine, \
    get_time_slot
 
 
