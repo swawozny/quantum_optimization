@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1b62f43c-b123-459e-beb2-6896e1d2115d" name="Default" comment="remove unnecessary files">
+      <change afterPath="$PROJECT_DIR$/document_examples/exclusion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/document_examples/jobshop.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old/minor_embedding_practice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qubo_ilp_vecs_and_matrices.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_dwave.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_minorminer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qubo_matrices_helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qubo_solver.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_18p8s20cs3div833e-6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_q10p14s25cs3,5f5e-4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_q8p12s30f5e-4cs4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/time_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/jobshopproblem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/working/big_JS_pruned_handEmbedded.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/working/small_JS_notPruned_handEmbedded.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/working/small_JS_pruned_handEmbedded.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobshop_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/jobshop_helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobshop_submit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobshopproblem.py" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/magisterka$qubo_ilp_vecs_and_matrices_minorminer.coverage" NAME="qubo_ilp_vecs_and_matrices_minorminer Coverage Results" MODIFIED="1573405902932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$csp_auto.coverage" NAME="csp_auto Coverage Results" MODIFIED="1559409125363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$minor_embedding_further.coverage" NAME="minor_embedding_further Coverage Results" MODIFIED="1562400032715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$qubo_ilp_vecs_and_matrices.coverage" NAME="qubo_ilp_vecs_and_matrices Coverage Results" MODIFIED="1575287050351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$czysta_wersja_csp.coverage" NAME="czysta_wersja_csp Coverage Results" MODIFIED="1564863451141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$qubo_ilp_vecs_and_matrices_dwave.coverage" NAME="qubo_ilp_vecs_and_matrices_dwave Coverage Results" MODIFIED="1572978625139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$jobshop.coverage" NAME="jobshop Coverage Results" MODIFIED="1570534212069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/document_examples" />
+    <SUITE FILE_PATH="coverage/magisterka$dwave_another_example.coverage" NAME="dwave_another_example Coverage Results" MODIFIED="1558803528568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$exclusion.coverage" NAME="exclusion Coverage Results" MODIFIED="1570532997003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/document_examples" />
+    <SUITE FILE_PATH="coverage/magisterka$time_tests.coverage" NAME="time_tests Coverage Results" MODIFIED="1573921669446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$jobshop_submit_pruned_bigger.coverage" NAME="jobshop_submit_pruned_bigger Coverage Results" MODIFIED="1568137050226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$helpers.coverage" NAME="helpers Coverage Results" MODIFIED="1558877515847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$qubo_solver.coverage" NAME="qubo_solver Coverage Results" MODIFIED="1571640761130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/magisterka$jobshop_submit2.coverage" NAME="jobshop_submit2 Coverage Results" MODIFIED="1564863903385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="qubo_ilp_vecs_and_matrices_dwave.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_dwave.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qubo_matrices_helpers.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/qubo_matrices_helpers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="197" column="23" lean-forward="true" selection-start-line="197" selection-start-column="23" selection-end-line="197" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qubo_ilp_vecs_and_matrices.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/qubo_ilp_vecs_and_matrices.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="41" column="89" lean-forward="true" selection-start-line="41" selection-start-column="89" selection-end-line="41" selection-end-column="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>sample_</find>
+      <find>stit</find>
+      <find>sample_qu</find>
+      <find>16</find>
+      <find>pruned</find>
+      <find>'x36</find>
+      <find>factor</find>
+      <find>print</find>
+      <find>Hej r</find>
+      <find>offset</find>
+      <find>0:</find>
+      <find>csp.</find>
+      <find>0,</find>
+      <find>ones_from_sample</find>
+      <find>-500</find>
+      <find>500,</find>
+      <find>embeddin</find>
+      <find>embedding</find>
+      <find>prepare_qubo_dicts</find>
+      <find>gurobi</find>
+      <find>[1,2</find>
+      <find>paths_qubits</find>
+      <find>check_sa</find>
+      <find>small</find>
+      <find>1,</find>
+      <find>brute</find>
+      <find>int(</find>
+      <find>dead</find>
+      <find>COST: 34</find>
+      <find>get_8</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>+ 8 +</replace>
+      <replace>+ 16</replace>
+      <replace>+</replace>
+      <replace>+ i + 16</replace>
+      <replace>+ i,</replace>
+      <replace>self.starts_once_coefficient * factor</replace>
+      <replace>self.one_job_one_machine_coefficient * factor</replace>
+      <replace>self.order_coefficient * factor</replace>
+      <replace>1:</replace>
+      <replace>2:</replace>
+      <replace>3:</replace>
+      <replace>4:</replace>
+      <replace>2.0</replace>
+      <replace>0.0</replace>
+      <replace>0.0,</replace>
+      <replace>500,</replace>
+      <replace>-S</replace>
+      <replace>A,</replace>
+      <replace>,</replace>
+      <replace>S,</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="surely_working_two_constraints" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dwave_another_example.py" />
+        <option value="$PROJECT_DIR$/qbsolv_example" />
+        <option value="$PROJECT_DIR$/qbsolv_example.py" />
+        <option value="$PROJECT_DIR$/csp_auto.py" />
+        <option value="$PROJECT_DIR$/helpers.py" />
+        <option value="$PROJECT_DIR$/czysta_wersja_csp.py" />
+        <option value="$PROJECT_DIR$/jobshop_helpers.py" />
+        <option value="$PROJECT_DIR$/minor_embedding_further.py" />
+        <option value="$PROJECT_DIR$/jobshopproblem.py" />
+        <option value="$PROJECT_DIR$/jobshop_submit.py" />
+        <option value="$PROJECT_DIR$/jobshop_submit2.py" />
+        <option value="$PROJECT_DIR$/jobshop_submit_pruned_bigger.py" />
+        <option value="$PROJECT_DIR$/utils/jobshop_helpers.py" />
+        <option value="$PROJECT_DIR$/working/big_JS_pruned_handEmbedded.py" />
+        <option value="$PROJECT_DIR$/utils/jobshopproblem.py" />
+        <option value="$PROJECT_DIR$/document_examples/exclusion.py" />
+        <option value="$PROJECT_DIR$/gurobi_files/gurobisampler.py" />
+        <option value="$PROJECT_DIR$/qubo_solver.py" />
+        <option value="$PROJECT_DIR$/document_examples/jobshop.py" />
+        <option value="$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_dwave.py" />
+        <option value="$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_minorminer.py" />
+        <option value="$PROJECT_DIR$/eng.txt" />
+        <option value="$PROJECT_DIR$/pl.txt" />
+        <option value="$PROJECT_DIR$/time_tests.py" />
+        <option value="$PROJECT_DIR$/results.txt" />
+        <option value="$PROJECT_DIR$/qubo_matrices_helpers.py" />
+        <option value="$PROJECT_DIR$/results_q8p12s30f5e-4cs4.txt" />
+        <option value="$PROJECT_DIR$/results_18p8s20cs3div833e-6.txt" />
+        <option value="$PROJECT_DIR$/results_q10p14s25cs3,5f5e-4.txt" />
+        <option value="$PROJECT_DIR$/qubo_ilp_vecs_and_matrices.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1301" />
+    <option name="height" value="772" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="magisterka" type="b2602c69:ProjectViewProjectNode" />
+              <item name="magisterka" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="magisterka" type="b2602c69:ProjectViewProjectNode" />
+              <item name="magisterka" type="462c0819:PsiDirectoryNode" />
+              <item name="document_examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dawid\Desktop\magisterka" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/old" />
+      <recent name="$PROJECT_DIR$/old/other" />
+      <recent name="$PROJECT_DIR$/working" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/gurobi_files" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.qubo_ilp_vecs_and_matrices">
+    <configuration name="qubo_ilp_vecs_and_matrices" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="magisterka" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qubo_ilp_vecs_and_matrices.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="qubo_ilp_vecs_and_matrices_dwave" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="magisterka" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_dwave.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="qubo_ilp_vecs_and_matrices_minorminer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="magisterka" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_minorminer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="qubo_solver" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="magisterka" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qubo_solver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="time_tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="magisterka" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/time_tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.qubo_solver" />
+      <item itemvalue="Python.qubo_ilp_vecs_and_matrices" />
+      <item itemvalue="Python.qubo_ilp_vecs_and_matrices_dwave" />
+      <item itemvalue="Python.qubo_ilp_vecs_and_matrices_minorminer" />
+      <item itemvalue="Python.time_tests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.qubo_ilp_vecs_and_matrices" />
+        <item itemvalue="Python.time_tests" />
+        <item itemvalue="Python.qubo_ilp_vecs_and_matrices_minorminer" />
+        <item itemvalue="Python.qubo_ilp_vecs_and_matrices_dwave" />
+        <item itemvalue="Python.qubo_solver" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b62f43c-b123-459e-beb2-6896e1d2115d" name="Default" comment="" />
+      <created>1558689173089</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558689173089</updated>
+    </task>
+    <task id="LOCAL-00001" summary="This version works for two constraints">
+      <created>1558868182075</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1558868182075</updated>
+    </task>
+    <task id="LOCAL-00002" summary="clean version">
+      <created>1559580361865</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559580361865</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5014641" side_tool="true" weight="0.43238994" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853587" weight="0.32228917" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3253012" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20061491" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.64582044" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.41716868" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32539684" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980783" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32831326" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42319277" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3298193" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32882884" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="This version works for two constraints" />
+    <MESSAGE value="clean version" />
+    <MESSAGE value="remove unnecessary files" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unnecessary files" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/local/lib/python3.6/dist-packages/dimod/core/sampler.py</url>
+          <line>172</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/local/lib/python3.6/dist-packages/dimod/core/sampler.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/local/lib/python3.6/dist-packages/dwave/system/composites/virtual_graph.py</url>
+          <line>388</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/working/small_JS_notPruned_handEmbedded.py</url>
+          <line>140</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/working/small_JS_notPruned_handEmbedded.py</url>
+          <line>141</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/working/big_JS_pruned_handEmbedded.py</url>
+          <line>87</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_minorminer.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/qubo_ilp_vecs_and_matrices.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="103" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="DWaveSampler().parameters" language="Python" />
+        <watch expression="max(list(tQ.values()))" language="Python" />
+        <watch expression="max(list(Q.values()))" language="Python" />
+        <watch expression="min(list(Q.values()))" language="Python" />
+        <watch expression="DWaveSampler().properties" language="Python" />
+        <watch expression="min(list(tQ.values()))" language="Python" />
+        <watch expression="min([tQ[key] for key in list(tQ.keys()) if key[0]!=key[1]])" language="Python" />
+        <watch expression="max([tQ[key] for key in list(tQ.keys()) if key[0]!=key[1]])" language="Python" />
+        <watch expression="SimulatedAnnealingSampler().parameters" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>EmbeddingComposite(DWaveSampler()).sample_qubo(Q, num_reads=100, auto_scale=True, annealing_time=20, postprocess=&quot;optimization&quot;)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>EmbeddingComposite(DWaveSampler())</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>SimulatedAnnealingSampler().parameters</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>max([tQ[key] for key in list(tQ.keys()) if key[0]!=key[1]])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>min([tQ[key] for key in list(tQ.keys()) if key[0]!=key[1]])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>max([tQ[key] for key in list(tQ.keys()) if key[0]==key[1]])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>min([tQ[key] for key in list(tQ.keys()) if key[0]==key[1]])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>[tQ[key] for key in list(tQ.keys()) if key[0]==key[1]]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>min(list(Q.values()))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>max(list(Q.values()))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dwavebinarycsp/compilers/stitcher.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dimod/decorators.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dwave/embedding/utils.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/networkx/linalg/graphmatrix.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-1247971763/minorminer.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/networkx/classes/graph.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dimod/vartypes.py" />
+    <entry file="file://$PROJECT_DIR$/old/other/qbsolv_example.qubo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dimod/sampleset.py" />
+    <entry file="file://$PROJECT_DIR$/old/old_small_jobshop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="105" column="11" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old/minor_embedding_practice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/working/small_JS_pruned_handEmbedded.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/working/small_JS_notPruned_handEmbedded.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gurobi811/linux64/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/dwave_system-0.7.2-py3.6.egg/dwave/system/samplers/dwave_sampler.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/dwave_cloud_client-0.5.4-py3.6.egg/dwave/cloud/client.py" />
+    <entry file="file://$PROJECT_DIR$/utils/jobshop_helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old/old_another_small_jobshop_dwave_another_example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="129" column="22" selection-start-line="129" selection-start-column="22" selection-end-line="129" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/working/big_JS_pruned_handEmbedded.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/document_examples/exclusion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/595628598/builtins.py" />
+    <entry file="jar://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/pyqubo-0.3.0-py3.6.egg!/pyqubo/utils/solver.py" />
+    <entry file="file://$PROJECT_DIR$/qubo_solver.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-1247971763/builtins.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dimod/binary_quadratic_model.py" />
+    <entry file="file://$PROJECT_DIR$/utils/jobshopproblem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qubo_matrices_helpers_dwave.py" />
+    <entry file="file://$PROJECT_DIR$/gurobi_files/gurobisampler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/document_examples/jobshop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="17" selection-start-line="17" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/networkx-2.3-py3.6.egg/networkx/classes/graph.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/595628598/minorminer.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/dimod-0.8.10-py3.6-win32.egg/dimod/binary_quadratic_model.py" />
+    <entry file="file://$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_minorminer.py" />
+    <entry file="file://$PROJECT_DIR$/pl.txt" />
+    <entry file="file://$PROJECT_DIR$/time_tests.py" />
+    <entry file="file://$PROJECT_DIR$/results_full_gurobi.txt" />
+    <entry file="file://$PROJECT_DIR$/results.txt" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dwave/system/samplers/dwave_sampler.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dwave/embedding/chimera.py" />
+    <entry file="file://$PROJECT_DIR$/qubo_ilp_vecs_and_matrices_dwave.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dwave/embedding/transforms.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dwave/cloud/solver.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dimod/reference/samplers/simulated_annealing.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dimod/core/sampler.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/dwave/system/composites/embedding.py" />
+    <entry file="file://$PROJECT_DIR$/results_18p8s20cs3div833e-6.txt" />
+    <entry file="file://$PROJECT_DIR$/results_dwave_P10S50D50_20k-80k_8k.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="919" column="21" selection-start-line="919" selection-start-column="21" selection-end-line="919" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results_q8p12s30f5e-4cs4.txt" />
+    <entry file="file://$PROJECT_DIR$/results_q10p14s25cs3,5f5e-4.txt" />
+    <entry file="file://$PROJECT_DIR$/qubo_ilp_vecs_and_matrices.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="41" column="89" lean-forward="true" selection-start-line="41" selection-start-column="89" selection-end-line="41" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qubo_matrices_helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="197" column="23" lean-forward="true" selection-start-line="197" selection-start-column="23" selection-end-line="197" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -92,3 +92,19 @@ def csp_get_order_constraint(jobs, number_of_machines, time_limit, number_of_ope
                     result.append((qubit_checked_op, qubits_filtered))
 
     return result
+
+def ones_from_sample(sample):
+    result = []
+    for key in list(sample.keys()):
+        if (sample[key] == 1.0):
+            result.append(key)
+    return result
+
+# [166, 170, 174, 292, 293, 298, 300, 301, 304, 305, 308, 309,
+# 423, 426, 431, 432, 433, 439, 443, 447, 554, 560, 561, 571, 682,
+# 688, 689, 699, 810, 816, 817, 827, 938, 944, 945, 955]
+
+# 6,6,6,6,6,6,6,6,6
+# 8,8,8,8,8,8,8,8,8
+# 9,9,9,9,9,9,9,9,9
+# 15,15,15,15,15,15,15,15,15
