@@ -1,7 +1,12 @@
+import functools
+import operator
+
 import numpy as np
 from collections import defaultdict
 
 import dimod
+
+from utils.jobshop_helpers import ones_from_sample
 
 
 def solve_matrix_with_gurobi(Q):
@@ -136,13 +141,13 @@ def get_18_qubits_data(S):
 
 
 def get_smaller_18_qubits_data(S):
-    D = 50
+    D = 70
     A = np.array([
         [12, 6, 0, 18, 0, 24, 4, 2, 0, 6, 0, 8, 8, 4, 0, 12, 0, 16, 64, 32, 16, 8, 4, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
          0, 0, 0, 0, 0],
         [12, 6, 0, 0, 30, 24, 4, 2, 0, 0, 10, 8, 8, 4, 0, 0, 20, 16, 0, 0, 0, 0, 0, 0, 0, 64, 32, 16, 8, 4, 2, 1, 0, 0,
          0, 0, 0, 0, 0],
-        [12, 0, 42, 18, 0, 24, 4, 0, 14, 6, 0, 8, 8, 0, 28, 12, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 32,
+        [12, 0, 42, 0, 30, 24, 4, 0, 14, 0, 10, 8, 8, 0, 28, 0, 20, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 32,
          16, 8, 4, 2, 1],
         [S, 0, 0, 0, 0, 0, S, 0, 0, 0, 0, 0, S, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
          0, 0],
@@ -161,7 +166,7 @@ def get_smaller_18_qubits_data(S):
     C_diag = [96, 48, 336, 144, 240, 192, 72, 36, 252, 108, 180, 144, 48, 24, 168, 72, 120, 96, 0, 0, 0, 0, 0, 0, 0, 0,
               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     C = np.diag(C_diag)
-    paths = [[0, 1, 3, 5], [0, 1, 4, 5], [0, 2, 3, 5]]
+    paths = [[0, 1, 3, 5], [0, 1, 4, 5], [0, 2, 4, 5]]
     return A, b, C, paths, 6, 3, D
 
 
@@ -199,6 +204,21 @@ def get_10_qubits_data(S):
     paths = [[0,1,4],[0,2,4],[0,3,4]]
     return A, b, C, paths, 5, 2, D
 
+def get_15_qubits_data(S):
+    D = 17
+    A = np.array([[6,3,0,0,6,2,1,0,0,2,4,2,0,0,4,32,16,8,4,2,1,0,0,0,0,0,0,0,0,0,0,0,0],
+                [6,0,12,0,6,2,0,4,0,2,4,0,8,0,4,0,0,0,0,0,0,32,16,8,4,2,1,0,0,0,0,0,0],
+                [6,0,0,9,6,2,0,0,3,2,4,0,0,6,4,0,0,0,0,0,0,0,0,0,0,0,0,32,16,8,4,2,1],
+                [S,0,0,0,0,S,0,0,0,0,S,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,S,0,0,0,0,S,0,0,0,0,S,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,S,0,0,0,0,S,0,0,0,0,S,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,S,0,0,0,0,S,0,0,0,0,S,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,S,0,0,0,0,S,0,0,0,0,S,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]])
+    b = np.array([-D, -D, -D, -S, -S, -S, -S, -S])
+    C_diag = [6,3,12,9,6,8,4,16,12,8,8,4,16,12,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    C = np.diag(C_diag)
+    paths = [[0,1,4],[0,2,4],[0,3,4]]
+    return A, b, C, paths, 5, 3, D
 
 def prepare_qubo_dicts_from_matrix(Q):
     linear = {i: Q[i, i] for i in range(len(Q[0]))}
@@ -280,30 +300,46 @@ def solve_dict_with_gurobi(tQ):
     return sampling_res
 
 
-def check_sample(ones_list, embedding, reverse_embedding, qubits_number, C, paths, tasks_number, machines_number, A):
+def check_chosen_and_slack_qubits(chosen_qubits_vector, slack_qubits, total_qubits_len, real_qubits_number, paths, deadline, A_vec, tasks_number, machines_number):
+
+
+    # THIS ASSUMES EQUAL SLACKS LENGTHS
+    slacks_len = total_qubits_len - real_qubits_number
+    single_slack_len = slacks_len / len(paths)
+    slack_qubits_templates = [[i for i in range(int(beginning), int(beginning) + int(single_slack_len))]
+                              for beginning in
+                              range(int(real_qubits_number), int(total_qubits_len), int(single_slack_len))]
+
+    # [10,11,18,22,26]
+
+    # chosen_slack=10
+
+    # COMPUTE TIME AND RETURN
+    times = [sum([A_vec[qubit_number] * chosen_qubits_vector[qubit_number] for qubit_number in single_path]) for
+             single_path in create_paths_qubits(paths, tasks_number, machines_number)]
+
+    slack_values = []
+    for template in slack_qubits_templates:
+        value = 0
+        for chosen_slack in slack_qubits:
+            # template=[10,11,12,13,14,15]
+            flag = 1 if chosen_slack in template else 0
+            if flag == 1:
+                power = len(template) - 1 - template.index(chosen_slack)
+                value += 2 ** power
+        slack_values.append(value)
+
+    slack_times = list(map(operator.add, times, slack_values))
+    diffs = list(map(lambda x: int(abs(x - deadline)), slack_times))
+    # print(times, slack_values, diffs)
+    all_equal = len(list(filter(lambda x: x == 0, diffs))) == len(paths)
+    slack_mark = '' if all_equal else 'SLACK({}) '.format(diffs)
+
+    return slack_mark, times
+
+
+def create_paths_qubits(paths, tasks_number, machines_number):
     qubits_for_tasks = defaultdict()
-    real_qubits_number = tasks_number * machines_number
-
-    # GET PART OF MATRIX C ONLY REFERRING TO THE ACTUAL PROBLEM
-    C_small = np.zeros((real_qubits_number, real_qubits_number))
-    for i in range(real_qubits_number):
-        for j in range(real_qubits_number):
-            C_small[i][j] = C[i][j]
-    # print(C_small)
-
-    # GET PART OF MATRIX A ONLY REFERRING TO DEADLINE CONSTRAINT
-    A_small = np.zeros((len(paths), real_qubits_number))
-    for p in range(len(paths)):
-        for qn in range(real_qubits_number):
-            A_small[p][qn] = A[p][qn]
-    # print("A small: {}".format(A_small))
-    A_vec = [0 for i in range(real_qubits_number)]
-    for row in A_small:
-        for i, element in enumerate(row):
-            if element != 0:
-                A_vec[i] = element
-    # print("A_VEC: {}".format(A_vec))
-
     for t in range(tasks_number):
         qubits_for_tasks[t] = [tasks_number * m + t for m in range(machines_number)]
     paths_qubits = []
@@ -312,23 +348,67 @@ def check_sample(ones_list, embedding, reverse_embedding, qubits_number, C, path
         for task_index in path:
             new_path.extend(qubits_for_tasks[task_index])
         paths_qubits.append(new_path)
+    return paths_qubits
+
+
+def create_avec(A, paths, real_qubits_number):
+    A_small = np.zeros((len(paths), real_qubits_number))
+    for p in range(len(paths)):
+        for qn in range(real_qubits_number):
+            A_small[p][qn] = A[p][qn]
+    # print("A small: {}".format(A_small))
+
+    A_vec = [0 for i in range(real_qubits_number)]
+    for row in A_small:
+        for i, element in enumerate(row):
+            if element != 0:
+                A_vec[i] = element
+    return A_vec
+
+
+def get_cost(C, real_qubits_number, chosen_qubits_vector):
+    C_small = np.zeros((real_qubits_number, real_qubits_number))
+    for i in range(real_qubits_number):
+        for j in range(real_qubits_number):
+            C_small[i][j] = C[i][j]
+    cost = sum(C_small.dot(chosen_qubits_vector))
+    return cost
+
+
+def check_sample(ones_list, embedding, reverse_embedding, qubits_number, C, paths, tasks_number, machines_number, A, deadline):
+    real_qubits_number = tasks_number * machines_number
+
+    # GET PART OF MATRIX C ONLY REFERRING TO THE ACTUAL PROBLEM
+    C
+    # print(C_small)
+
+    # GET PART OF MATRIX A ONLY REFERRING TO DEADLINE CONSTRAINT
+
+    A_vec = create_avec(A, paths, real_qubits_number)
+    # print("A_VEC: {}".format(A_vec))
+
+    # paths_qubits = create_paths_qubits(paths)
+
     reproduced_embedding = defaultdict(list)
     for qubit in ones_list:
         reproduced_embedding[reverse_embedding[qubit]].append(qubit)
     # print("REPRODUCED EMBEDDING: {}".format(reproduced_embedding))
 
+    total_qubits_len = qubits_number
     # COMPUTE REAL PROBLEM ENERGY (NOT QUBO ENERGY)
     chosen_qubits = [int(q[1:]) for q in reproduced_embedding.keys() if int(q[1:]) < real_qubits_number]
+    slack_qubits = [int(q[1:]) for q in reproduced_embedding.keys() if int(q[1:]) >= real_qubits_number]
     chosen_qubits_vector = [0 for i in range(real_qubits_number)]
     for cq in chosen_qubits:
         chosen_qubits_vector[cq] = 1
-    cost = sum(C_small.dot(chosen_qubits_vector))
+
+    slack_mark, times = check_chosen_and_slack_qubits(chosen_qubits_vector, slack_qubits, total_qubits_len, real_qubits_number, paths, deadline, A_vec, tasks_number, machines_number)
+
+    cost = get_cost(C, real_qubits_number, chosen_qubits_vector)
     # print("PATHS QUBITS {}\n".format(paths_qubits))
     # print("ENERGY: {}".format(cost))
 
-    # COMPUTE TIME AND RETURN
-    times = [sum([A_vec[qubit_number] * chosen_qubits_vector[qubit_number] for qubit_number in single_path]) for
-             single_path in paths_qubits]
+
 
 
     # print("TIMES: {}".format(time))
@@ -343,9 +423,9 @@ def check_sample(ones_list, embedding, reverse_embedding, qubits_number, C, path
     if len(list(filter(lambda x: int(x[1:]) < real_qubits_number, list(reproduced_embedding.keys())))) != tasks_number:
         tasks_number_mark = "WRONG TASKS NUMBER"
     if len(chains_broken) == 0:
-        return tasks_number_mark + str(list(filter(lambda x: int(x[1:]) < 200, list(reproduced_embedding.keys())))), cost, times
+        return slack_mark + tasks_number_mark + str(list(filter(lambda x: int(x[1:]) < 200, list(reproduced_embedding.keys())))), cost, times
     else:
-        return "CHAINS BROKEN: {} for solution {}".format(chains_broken, list(reproduced_embedding.keys())), cost, times
+        return "{}CHAINS: {} for solution {} ".format(slack_mark, chains_broken, list(reproduced_embedding.keys())), cost, times
 
 
 def convert_to_x_dict(input):
@@ -364,3 +444,44 @@ def div_d(my_dict, value):
         my_dict[i] = float(my_dict[i] / value)
 
     return my_dict
+
+stars = "\n********************************************************************\n"
+
+def gurobi_solve_no_embedding(QUBO, S,P,real_qubits_number, paths, deadline, tasks_number, machines_number, C, A):
+    sampling_result = solve_matrix_with_gurobi(QUBO)
+    results_file = open("comparing_results.txt", "a+")
+    results_file.write(stars)
+    params_string = "S={}, P={}\n".format(S, P)
+    results_file.write(params_string)
+    for s in list(sampling_result.data()):
+        chosen_qubits = [q for q in ones_from_sample(s.sample) if q < real_qubits_number]
+        slack_qubits = [q for q in ones_from_sample(s.sample) if q >= real_qubits_number]
+        chosen_qubits_vector = [0 for i in range(real_qubits_number)]
+        for cq in chosen_qubits:
+            chosen_qubits_vector[cq] = 1
+        total_qubits_len = len(A[0])
+        slack_mark, times = check_chosen_and_slack_qubits(chosen_qubits_vector, slack_qubits,
+                                                                                total_qubits_len,
+                                                                                real_qubits_number, paths, deadline,
+                                                                                create_avec(A,
+                                                                                                                  paths,
+                                                                                                                  real_qubits_number)
+                                                                                , tasks_number, machines_number)
+        deadline_mark = ""
+        if max(times) > deadline:
+            deadline_mark = "DEADLINE "
+        tasks_number_mark = ""
+        if len(list(filter(lambda x: x < real_qubits_number,
+                           chosen_qubits))) != tasks_number:
+            tasks_number_mark = "TASKS_NUM "
+        cost = get_cost(C, real_qubits_number, chosen_qubits_vector)
+        res_str = "{}{}{}{}/{},COST: {}, RESULT: {}, ENERGY: {}, OCCURRENCES: {}".format(tasks_number_mark,
+                                                                                         deadline_mark, slack_mark,
+                                                                                         times, deadline, cost,
+                                                                                         ones_from_sample(s.sample),
+                                                                                         s.energy, s.num_occurrences)
+        print(res_str)
+        results_file.write(res_str)
+
+def calculate_energy_of_QUBO_for_result(QUBO, result_list):
+    return (result_list.transpose()).dot(QUBO).dot(result_list)
