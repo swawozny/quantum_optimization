@@ -76,4 +76,4 @@ def solve_18q():
         cost_map[sol] = cost
     print({k: v for k, v in sorted(cost_map.items(), key=lambda item: item[1])})
 
-solve_15q()
+solve_18q()

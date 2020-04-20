@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import numpy as np
 import plotly.express as px
 from pandas import DataFrame
+from matplotlib.backends.backend_pdf import PdfPages
 
 res_8 = [45, 27, 15, 28, 20, 8, 19, 21, 9, 24, 3, 16, 7, 12, 6, 9, 1, 3, 17, 27, 19, 26, 24, 17, 10, 15, 8, 6, 9, 5, 6,
          2, 4, 3, 8, 0, 2, 4, 3, 1, 2, 4, 2, 3, 0, 4, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
@@ -74,7 +75,13 @@ prepare_histogram(res_15_correct, res_15_wrong, axs[1, 0], 3)
 prepare_histogram([0], [float(x)/float(sum(res_18)) for x in res_18], axs[1, 1], 4)
 for ax in axs.flat:
     ax.set(ylabel='Probability density')
-plt.show()
+# plt.show()
+# plt.subplots_adjust(top=2)
+fig.tight_layout(pad=0.75)
+
+pdf = PdfPages("histogram_dwave.pdf")
+pdf.savefig()
+pdf.close()
 # y_pos = np.arange(len(res_8))
 # frame1 = plt.gca()
 # frame1.axes.get_xaxis().set_visible(False)
