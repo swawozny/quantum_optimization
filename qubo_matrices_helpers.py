@@ -12,16 +12,32 @@ from utils.jobshop_helpers import ones_from_sample
 def solve_matrix_with_gurobi(Q):
     from gurobi_files.gurobisampler import GurobiSampler
     linear, quadratic = prepare_qubo_dicts_from_matrix(Q)
+
     bqm = dimod.BinaryQuadraticModel(linear,
                                      quadratic,
                                      offset=0.0,
                                      vartype=dimod.BINARY)
-    # print(linear)
-    # print(quadratic)
+
     sampler = GurobiSampler()
     sampling_res = sampler.sample(bqm, method="mip", num_reads=2000, gurobi_params_kw={"TimeLimit": 30})
     return sampling_res
 
+def solve_matrix_with_PTSampler(Q):
+    from omnisolver.pt.sampler import PTSampler
+    # linear, quadratic = prepare_qubo_dicts_from_matrix(Q)
+    # linear2, quadratic2 = prepare_qubo_dicts_dwave(Q)
+    # print("*******1*********")
+    # print(linear, quadratic)
+    # print("*******2*********")
+    # print(linear2, quadratic2)
+    # print("*****************")
+    # # print(linear)
+    # # print(quadratic)
+    # QUBO = dict(linear)
+    # QUBO.update(quadratic)
+    sampler = PTSampler()
+    sampling_res = sampler.sample_qubo(Q)
+    return sampling_res
 
 def get_minimize_X_minus_Y_data():
     # MAXIMIZE X-Y
@@ -170,6 +186,23 @@ def get_smaller_18_qubits_data(S):
     return A, b, C, paths, 6, 3, D
 
 
+def get_first_workflow_example(S):
+    D = 19
+    A = np.array([
+        [6, 3, 0, 9, 2, 1, 0, 3, 16, 8, 4, 2, 1, 0, 0, 0, 0, 0],
+        [6, 0, 12, 9, 2, 0, 4, 3, 0, 0, 0, 0, 0, 16, 8, 4, 2, 1],
+        [S, 0, 0, 0, S, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, S, 0, 0, 0, S, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, S, 0, 0, 0, S, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, S, 0, 0, 0, S, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ])
+    b = np.array([-D, -D, -S, -S, -S, -S])
+    C_diag = [6, 3, 12, 9, 8, 4, 16, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    C = np.diag(C_diag)
+    paths = [[0, 1, 3], [0, 2, 3]]
+    return A, b, C, paths, 4, 2, D
+
+
 def get_8_qubits_data(S):
     D = 19
     A = np.array([
@@ -183,6 +216,9 @@ def get_8_qubits_data(S):
     b = np.array([-D, -D, -S, -S, -S, -S])
     C_diag = [6, 3, 12, 9, 8, 4, 16, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     C = np.diag(C_diag)
+    # print("***")
+    # print(C)
+    # print("***")
     paths = [[0, 1, 3], [0, 2, 3]]
     return A, b, C, paths, 4, 2, D
 
@@ -235,13 +271,13 @@ def prepare_qubo_dicts_dwave(QUBO):
     linear = {}
     quadratic = {}
     for i in range(qubits_number):
-        linear['x{}'.format(i), 'x{}'.format(i)] = float(QUBO[i, i])
+        linear[i, i] = float(QUBO[i, i])
     for i in range(qubits_number):
         for j in range(qubits_number):
             if i < j:
                 val = QUBO[i, j]
                 if val != 0:
-                    quadratic['x{}'.format(i), 'x{}'.format(j)] = 2 * float(val)
+                    quadratic[i, j] = 2 * float(val)
     return linear, quadratic
 
 

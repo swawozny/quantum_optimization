@@ -4,6 +4,7 @@
 import warnings
 
 import dwavebinarycsp
+from dimod import Vartype
 from gurobipy import Model, GRB
 import dimod
 
@@ -96,7 +97,7 @@ class GurobiSampler(dimod.Sampler):
             energies.append(energy)
             samples.append(sample)
 
-        ss = dimod.SampleSet.from_samples(samples, vartype=bqm.BINARY, energy=energies, aggregate_samples=True)
+        ss = dimod.SampleSet.from_samples(samples, vartype=Vartype.BINARY, energy=energies, aggregate_samples=True)
         return ss.change_vartype(bqm.vartype)
 
 
